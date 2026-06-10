@@ -1,61 +1,102 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const cmindFeatures = [
+  'Structured, evidence-based therapeutic conversations between sessions',
+  'Curated clinical knowledge graph — no free-form medical advice',
+  'Real-time crisis detection with escalation to the care team',
+  'Provider dashboard with alerts, session summaries, and oversight',
+  'EHR-friendly documentation and billing support',
+];
+
+const lafiyaFeatures = [
+  'Offline-first engine for low-connectivity environments',
+  'Evidence-based differentials aligned with Nigerian clinical parameters',
+  'Treatment guidance based on the Nigerian Standing Orders (NSO)',
+  'Rapid intake-to-treatment workflow optimized for busy clinics',
+  'Available as a cloud service or tablet-optimized Android app',
+];
 ---
 
-<BaseLayout title="Products | C-Mind">
-  <div class="bg-white py-24 sm:py-32">
+<BaseLayout title="Products | C-Mind" description="C-Mind for mental health and Lafiya AI for primary care — evidence-based clinical AI built for real-world deployment.">
+  <!-- PAGE HERO -->
+  <section class="border-b border-stone-200 bg-stone-50 py-20 sm:py-28">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl text-balance">Our Products</h2>
-        <p class="mt-4 text-xl leading-8 text-stone-600">Discover how C-Mind is empowering clinical care across different domains and environments.</p>
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-teal-600">Our Products</p>
+        <h1 class="mt-3 font-display text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
+          Clinical AI, built for the point of care
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-stone-600">
+          Discover how C-Mind is empowering clinical care across different domains and environments.
+        </p>
       </div>
-      <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        
+    </div>
+  </section>
+
+  <section class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
         <!-- C-Mind -->
-        <article class="flex flex-col items-start justify-between rounded-3xl bg-stone-50 p-10 ring-1 ring-stone-900/5 transition hover:shadow-xl hover:-translate-y-1 duration-300">
+        <article class="flex flex-col rounded-3xl bg-stone-50 p-10 ring-1 ring-stone-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
           <div class="flex items-center gap-x-4 text-xs">
-            <span class="relative z-10 rounded-full bg-teal-100 px-4 py-1.5 font-semibold text-teal-800 tracking-wide uppercase">Mental Health</span>
+            <span class="rounded-full bg-teal-100 px-4 py-1.5 font-semibold uppercase tracking-wide text-teal-800">Mental Health</span>
           </div>
-          <div class="group relative mt-6 flex-grow">
-            <h3 class="mt-3 text-3xl font-extrabold leading-9 text-stone-900">
-              <a href="https://pro.c-mindcare.com" target="_blank" rel="noopener">
-                <span class="absolute inset-0"></span>
-                C-Mind
-              </a>
-            </h3>
-            <p class="mt-5 text-lg leading-7 text-stone-600">A clinically integrated platform that enhances engagement, personalization, and continuity of care across healthcare systems. Guided reflection and structured interactions designed around evidence-based therapeutic principles.</p>
-          </div>
-          <div class="mt-8 border-t border-stone-200 pt-6 w-full relative">
-             <a href="https://pro.c-mindcare.com" target="_blank" rel="noopener" class="text-base font-semibold text-teal-700 hover:text-teal-800 inline-flex items-center gap-2">
-               Learn more about C-Mind
-               <span aria-hidden="true">&rarr;</span>
-             </a>
+          <h2 class="mt-6 font-display text-3xl font-bold leading-9 text-stone-900">
+            <a href="https://pro.c-mindcare.com" target="_blank" rel="noopener" class="transition hover:text-teal-700">C-Mind</a>
+          </h2>
+          <p class="mt-5 text-base leading-7 text-stone-600">
+            A clinically integrated platform that enhances engagement, personalization, and continuity of care. C-Mind extends evidence-based mental health support between sessions while keeping the provider informed and in control.
+          </p>
+          <ul class="mt-8 flex-grow space-y-3">
+            {cmindFeatures.map((f) => (
+              <li class="flex gap-3 text-sm leading-6 text-stone-700">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 h-5 w-5 flex-none text-teal-600">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-8 w-full border-t border-stone-200 pt-6">
+            <a href="https://pro.c-mindcare.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-base font-semibold text-teal-700 transition hover:text-teal-800">
+              Learn more about C-Mind
+              <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </article>
-        
+
         <!-- Lafiya AI -->
-        <article class="flex flex-col items-start justify-between rounded-3xl bg-green-50 p-10 ring-1 ring-green-900/5 transition hover:shadow-xl hover:-translate-y-1 duration-300">
+        <article class="flex flex-col rounded-3xl bg-green-50 p-10 ring-1 ring-green-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
           <div class="flex items-center gap-x-4 text-xs">
-            <span class="relative z-10 rounded-full bg-green-200 px-4 py-1.5 font-semibold text-green-900 tracking-wide uppercase">Primary Care</span>
+            <span class="rounded-full bg-green-200 px-4 py-1.5 font-semibold uppercase tracking-wide text-green-900">Primary Care</span>
           </div>
-          <div class="group relative mt-6 flex-grow">
-            <h3 class="mt-3 text-3xl font-extrabold leading-9 text-stone-900">
-              <a href="/lafiya">
-                <span class="absolute inset-0"></span>
-                Lafiya AI
-              </a>
-            </h3>
-            <p class="mt-5 text-lg leading-7 text-stone-600">Nigeria's offline Clinical Decision Support for Primary Care. Enhance diagnostic accuracy with evidence-based support, seamlessly cross-referencing symptoms against a Knowledge Graph optimized for low-connectivity environments.</p>
-          </div>
-          <div class="mt-8 border-t border-green-200 pt-6 w-full relative">
-             <a href="/lafiya" class="text-base font-semibold text-green-700 hover:text-green-800 inline-flex items-center gap-2">
-               Explore Lafiya AI 
-               <span aria-hidden="true">&rarr;</span>
-             </a>
+          <h2 class="mt-6 font-display text-3xl font-bold leading-9 text-stone-900">
+            <a href="/lafiya" class="transition hover:text-green-700">Lafiya AI</a>
+          </h2>
+          <p class="mt-5 text-base leading-7 text-stone-600">
+            Nigeria's offline clinical decision support for primary care. Lafiya enhances diagnostic accuracy with evidence-based support, cross-referencing symptoms against a knowledge graph optimized for low-connectivity environments.
+          </p>
+          <ul class="mt-8 flex-grow space-y-3">
+            {lafiyaFeatures.map((f) => (
+              <li class="flex gap-3 text-sm leading-6 text-stone-700">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mt-0.5 h-5 w-5 flex-none text-green-600">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-8 w-full border-t border-green-200 pt-6">
+            <a href="/lafiya" class="inline-flex items-center gap-2 text-base font-semibold text-green-700 transition hover:text-green-800">
+              Explore Lafiya AI
+              <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </article>
 
       </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>

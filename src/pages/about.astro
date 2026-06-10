@@ -1,37 +1,91 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const values = [
+  {
+    title: 'Evidence-Based',
+    body: 'Clinical content draws on established therapeutic frameworks and treatment guidelines, organized in a curated knowledge graph that undergoes systematic validation.',
+  },
+  {
+    title: 'Clinician-Aligned',
+    body: 'We design with and for clinicians. Providers keep oversight of every patient interaction, and our tools reduce their workload rather than adding to it.',
+  },
+  {
+    title: 'Ethics-First',
+    body: 'Clear boundaries, transparent limitations, and deterministic safety behavior. Our products state plainly what they are — and what they are not.',
+  },
+  {
+    title: 'Privacy-Protective',
+    body: 'Health information is handled on HIPAA-eligible infrastructure under a Business Associate Agreement, encrypted in transit and at rest.',
+  },
+];
 ---
-<BaseLayout title="About | C-Mind">
-  <div class="bg-white py-24 sm:py-32">
+
+<BaseLayout title="About | C-Mind" description="C-Mind builds evidence-based, safety-first clinical AI in collaboration with clinicians, researchers, and care organizations.">
+  <!-- PAGE HERO -->
+  <section class="border-b border-stone-200 bg-stone-50 py-20 sm:py-28">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">About C-Mind</h2>
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-teal-600">About C-Mind</p>
+        <h1 class="mt-3 font-display text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
+          Bridging technological potential and real-world care
+        </h1>
         <p class="mt-6 text-lg leading-8 text-stone-600">
-          Bridging the gap between technological potential and real-world care needs.
+          C-Mind was created to address gaps in access, engagement, and continuity of care by applying advances in artificial intelligence responsibly and ethically.
         </p>
       </div>
-      
-      <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        <div class="flex flex-col gap-y-4 border-l-4 border-teal-200 pl-6 h-full">
-          <h3 class="text-xl font-semibold leading-8 text-stone-900">Our Mission</h3>
-          <p class="text-base leading-7 text-stone-600">
-            C-Mind was created to address gaps in access, engagement, and continuity of mental health support by leveraging advances in artificial intelligence responsibly and ethically.
-          </p>
-        </div>
-        <div class="flex flex-col gap-y-4 border-l-4 border-teal-200 pl-6 h-full">
-          <h3 class="text-xl font-semibold leading-8 text-stone-900">Our Approach</h3>
-          <p class="text-base leading-7 text-stone-600">
-            Our work is grounded in scientific evidence, implementation awareness, and real-world healthcare needs. We emphasize collaboration with clinicians, researchers, and care organizations to ensure appropriate deployment and impact.
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-16 flex justify-center gap-8 text-sm font-semibold text-stone-900">
-        <div class="flex items-center gap-2 bg-stone-50 px-6 py-3 rounded-full border border-stone-200"><span class="text-teal-600">→</span> Evidence-Based</div>
-        <div class="flex items-center gap-2 bg-stone-50 px-6 py-3 rounded-full border border-stone-200"><span class="text-teal-600">→</span> Clinician-Aligned</div>
-        <div class="flex items-center gap-2 bg-stone-50 px-6 py-3 rounded-full border border-stone-200"><span class="text-teal-600">→</span> Ethics-First</div>
-      </div>
-
     </div>
-  </div>
+  </section>
+
+  <!-- MISSION / APPROACH -->
+  <section class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div class="rounded-3xl bg-stone-50 p-10 ring-1 ring-stone-900/5">
+          <h2 class="font-display text-2xl font-bold text-stone-900">Our Mission</h2>
+          <p class="mt-4 text-base leading-7 text-stone-600">
+            Too many people fall through the gaps between appointments, waitlists, and under-resourced clinics. C-Mind exists to extend the reach of clinical care — giving patients meaningful, evidence-based support when their care team isn't in the room, and giving clinicians the visibility to act when it matters.
+          </p>
+        </div>
+        <div class="rounded-3xl bg-stone-50 p-10 ring-1 ring-stone-900/5">
+          <h2 class="font-display text-2xl font-bold text-stone-900">Our Approach</h2>
+          <p class="mt-4 text-base leading-7 text-stone-600">
+            Our work is grounded in scientific evidence, implementation awareness, and real-world healthcare needs. We build in close collaboration with clinicians, researchers, and care organizations — validating systematically before deploying, and keeping human judgment at the center of every clinical decision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="bg-stone-50 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">What we stand for</h2>
+      </div>
+      <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+        {values.map((v) => (
+          <div class="rounded-2xl bg-white p-8 ring-1 ring-stone-900/5">
+            <h3 class="text-base font-semibold text-stone-900">
+              <span class="mr-2 text-teal-600">&rarr;</span>{v.title}
+            </h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-white py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center lg:px-8">
+      <h2 class="font-display text-2xl font-bold text-stone-900">Want to work with us?</h2>
+      <p class="mt-3 text-base leading-7 text-stone-600">
+        We partner with clinics, health systems, and research organizations.
+      </p>
+      <a href="/contact" class="mt-6 inline-block rounded-full bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-teal-500">
+        Get in Touch
+      </a>
+    </div>
+  </section>
 </BaseLayout>

@@ -1,48 +1,145 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const principles = [
+  {
+    title: 'Evidence-Based',
+    body: 'Clinical content is grounded in a curated knowledge graph built from established therapeutic frameworks and treatment guidelines — not free-form generation.',
+    icon: 'M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25',
+  },
+  {
+    title: 'Safety-First',
+    body: 'Deterministic safeguards detect crisis and elevated-risk situations, surface support resources, and escalate to the care team in real time.',
+    icon: 'M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z',
+  },
+  {
+    title: 'Human-in-the-Loop',
+    body: 'Clinicians stay in control. Providers receive alerts, review session summaries, and direct the care plan — AI augments their reach between visits.',
+    icon: 'M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z',
+  },
+  {
+    title: 'Privacy-Protective',
+    body: 'Protected health information is encrypted in transit and at rest, processed on HIPAA-eligible infrastructure under a Business Associate Agreement.',
+    icon: 'M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z',
+  },
+];
 ---
 
-<BaseLayout title="C-Mind | Empowering Clinical Care through trusted AI">
-  <!-- HERO SECTION -->
-  <section class="relative overflow-hidden bg-stone-900 pt-24 pb-32 lg:pt-40 lg:pb-48 text-white">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
-      <h1 class="mx-auto max-w-4xl text-5xl font-bold tracking-tight sm:text-7xl font-display">
-        Empowering clinical care  
-        <span class="text-teal-400 block sm:inline">through trusted AI.</span>
+<BaseLayout title="C-Mind | Empowering Clinical Care through Trusted AI">
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-stone-900 pt-24 pb-28 text-white lg:pt-36 lg:pb-40">
+    <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8">
+      <p class="mx-auto inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-1.5 text-sm font-medium text-teal-300">
+        Clinical AI for mental health and primary care
+      </p>
+      <h1 class="mx-auto mt-8 max-w-4xl font-display text-5xl font-bold tracking-tight sm:text-7xl">
+        Empowering clinical care
+        <span class="block text-teal-400 sm:inline">through trusted AI.</span>
       </h1>
-      
+
       <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-stone-300">
         C-Mind builds evidence-based, safety-first clinical intelligence tools designed for ethical deployment within research and real-world healthcare systems.
       </p>
 
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/products" class="rounded-full bg-teal-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-teal-500 hover:shadow-xl transition-all">
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/products" class="rounded-full bg-teal-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:bg-teal-500 hover:shadow-xl">
           View Our Products
         </a>
-        <a href="/about" class="text-base font-semibold leading-6 text-stone-300 hover:text-white transition px-8 py-4">
-          Our Company <span aria-hidden="true">→</span>
+        <a href="/about" class="px-8 py-4 text-base font-semibold leading-6 text-stone-300 transition hover:text-white">
+          Our Company <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
+
+      <div class="mx-auto mt-16 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-stone-400">
+        <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>Evidence-based clinical knowledge</span>
+        <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>Real-time safety escalation</span>
+        <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>Clinician oversight built in</span>
+      </div>
     </div>
-    
-    <!-- Decorative background elements -->
-    <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.teal.900),theme(colors.stone.900))] opacity-80"></div>
+
+    <div class="absolute inset-0 -z-0 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.teal.900),theme(colors.stone.900))] opacity-80"></div>
   </section>
 
-  <!-- BUSINESS OVERVIEW -->
-  <section class="py-24 sm:py-32 bg-stone-50">
+  <!-- PRODUCTS PREVIEW -->
+  <section class="bg-white py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">Our Philosophy</h2>
-        <p class="mt-6 text-lg leading-8 text-stone-600">
-          Artificial intelligence should augment—not substitute—human care. We develop specialized, highly-governed AI infrastructure that bridges the gap between structured clinical workflows and dynamic patient needs. 
+        <h2 class="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">Two products, one mission</h2>
+        <p class="mt-4 text-lg leading-8 text-stone-600">
+          Purpose-built clinical AI for the settings that need it most — behavioral health practices and resource-constrained primary care.
         </p>
       </div>
 
-      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl text-center">
-        <a href="/products" class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-teal-800 bg-teal-100 hover:bg-teal-200 shadow-sm transition-colors">
-           Explore our Mental Health and Primary Care solutions
-        </a>
+      <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <!-- C-Mind -->
+        <article class="flex flex-col rounded-3xl bg-stone-50 p-10 ring-1 ring-stone-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <span class="w-fit rounded-full bg-teal-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal-800">Mental Health</span>
+          <h3 class="mt-6 font-display text-2xl font-bold text-stone-900">C-Mind</h3>
+          <p class="mt-4 flex-grow text-base leading-7 text-stone-600">
+            A clinically integrated platform that extends evidence-based mental health support between sessions — with structured, therapeutic conversations, real-time safety monitoring, and a provider dashboard that keeps clinicians informed and in control.
+          </p>
+          <a href="https://pro.c-mindcare.com" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 border-t border-stone-200 pt-6 text-base font-semibold text-teal-700 transition hover:text-teal-800">
+            Learn more about C-Mind <span aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+
+        <!-- Lafiya AI -->
+        <article class="flex flex-col rounded-3xl bg-green-50 p-10 ring-1 ring-green-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <span class="w-fit rounded-full bg-green-200 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-green-900">Primary Care</span>
+          <h3 class="mt-6 font-display text-2xl font-bold text-stone-900">Lafiya AI</h3>
+          <p class="mt-4 flex-grow text-base leading-7 text-stone-600">
+            Nigeria's offline-capable clinical decision support for primary care. Evidence-based diagnostic guidance aligned with national treatment guidelines, built to work in low-connectivity environments.
+          </p>
+          <a href="/lafiya" class="mt-8 inline-flex items-center gap-2 border-t border-green-200 pt-6 text-base font-semibold text-green-700 transition hover:text-green-800">
+            Explore Lafiya AI <span aria-hidden="true">&rarr;</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="bg-stone-50 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">Built on principles, not promises</h2>
+        <p class="mt-4 text-lg leading-8 text-stone-600">
+          Artificial intelligence should augment — not substitute — human care. Every C-Mind product is engineered around four commitments.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+        {principles.map((p) => (
+          <div class="rounded-2xl bg-white p-8 ring-1 ring-stone-900/5">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-600">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d={p.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-base font-semibold text-stone-900">{p.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="relative overflow-hidden rounded-3xl bg-stone-900 px-8 py-16 text-center sm:px-16 sm:py-20">
+        <div class="absolute inset-0 bg-[radial-gradient(30rem_30rem_at_top,theme(colors.teal.800),theme(colors.stone.900))] opacity-70"></div>
+        <div class="relative">
+          <h2 class="mx-auto max-w-2xl font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Partner with us
+          </h2>
+          <p class="mx-auto mt-4 max-w-xl text-lg leading-8 text-stone-300">
+            We collaborate with clinics, health systems, and research organizations to deploy clinical AI responsibly.
+          </p>
+          <a href="/contact" class="mt-8 inline-block rounded-full bg-teal-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-teal-500">
+            Get in Touch
+          </a>
+        </div>
       </div>
     </div>
   </section>
